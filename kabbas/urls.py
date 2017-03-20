@@ -18,10 +18,8 @@ from django.contrib import admin
 from shortener.views import HomeView, RedirectURLView, ApiView
 
 urlpatterns = [
-   
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^api/$', ApiView.as_view(), name='api'),
-
-    url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
+   url(r'^$', HomeView.as_view(), name='home'),
+   url(r'^admin/', admin.site.urls),
+   url(r'^api/', ApiView.as_view(), name='api'),
+   url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
         ]
