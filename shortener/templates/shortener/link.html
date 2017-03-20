@@ -1,0 +1,19 @@
+{% extends "shortener/base2.html" %}
+
+{% block title %}
+    link
+{% endblock %}
+{% block content %}
+    <div class="text-left">
+        <h3>
+            <span  class='label label-default'>Original Link:<br>
+            <a class='link' href="{{obj.url}}">
+                {{obj.url}}
+        </a></span></h3>
+       <br> 
+       <h3><span class='label label-success'>Shrinked:<br> 
+            <a class='link' href="{{ obj.get_short_url }}">
+                {{ obj.get_short_url }}
+            </a></span></h3>
+    </div>
+{% endblock content %}

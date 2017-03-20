@@ -1,0 +1,70 @@
+{% extends "shortener/base2.html" %}
+{% load staticfiles %}
+{% block title %}
+    api
+{% endblock title %}
+
+{% block stylesheets %}
+    <link href={% static "shortener/prism.css" %} rel="stylesheet" />
+{% endblock stylesheets %}
+
+{% block scripts %}
+    <script src={% static "shortener/prism.js" %}></script>
+{% endblock scripts %}
+
+
+{% block content %}
+<div class='fluid-container text-left'>
+<br>
+<br>
+<br/>
+<p class='well'>
+An Application Programming Interface (API) defines interfaces to a programming library or framework for accessing functionality provided by the library or framework. The KBS REST API provides methods for accessing every feature in our product. Your program talks to KBS using HTTP or HTTPS, the same protocols that your web browser uses to interact with web pages, and follows the principles of Representational State Transfer (REST). 
+</p>
+
+<h3><strong> Usage </strong></h3>
+<p>post request to "api.kbs.com" with "url" as parameter
+</p>
+
+<h4><strong>cURL</strong></h4>
+<pre>
+    <code class='language-bash'>
+        curl --data "url=www.abc.com" http://api.kbs.com
+    </code>
+</pre>
+<br>
+<h4><strong>Python</strong></h4>
+<pre><code class='language-python'><div class='text-left'>
+import requests
+r = requests.post('http://api.kbs.com/', data={'url':'https://django-hosts.readthedocs.io/en/latest/'})
+
+if r.json()['accepted']:
+    print r.json()['data']['shortcode']
+</div>
+</code></pre>
+
+
+<h3><strong>Response</strong></h3>
+<p>SUCCESS</p> <p><strong>JSON</strong></p>
+<pre>
+    <code class='language-json'>
+{
+  'accepted': 1,
+  'data': {
+            'shortcode': 'http://www.kbs.com/xHTOog/',
+            'url':  'https://django-hosts.readthedocs.io/en/latest/'
+            }
+}
+    </code>
+</pre>
+
+<p>FAILURE</p> <p><strong>JSON</strong></p>
+<pre>
+    <code class='language-json'>
+    {'accepted': 0, 'msg': 'Invalid URL'}    
+    </code>
+</pre>
+</div>
+{% endblock content %}
+
+
