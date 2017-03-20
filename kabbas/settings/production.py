@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
 
