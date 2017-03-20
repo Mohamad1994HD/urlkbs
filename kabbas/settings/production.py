@@ -14,7 +14,7 @@ SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.kbs.com", "kbs.com", "api.kbs.com", "kabbas.herokuapp.com"]
+ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
 
 
 # Application definition
@@ -49,8 +49,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'kabbas.urls'
 ROOT_HOSTCONF = 'kabbas.hosts'
 DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = 'http://www.kbs.com'
-PARENT_HOST = 'kbs.com'
+DEFAULT_REDIRECT_URL = 'http://www.urlkbs.life'
+PARENT_HOST = 'urlkbs.life'
 API_URLCONF = 'api.urls'
     
 TEMPLATES = [
