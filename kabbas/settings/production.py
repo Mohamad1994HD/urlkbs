@@ -20,7 +20,8 @@ SERVER_EMAIL = 'logging@urlkbs.life'
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'logging'
 EMAIL_HOST_PAsSWORD = 'logging1994'
-
+EMAIL_PORT = "465"
+EMAIL_USE_SSL = True
 ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
 
 
