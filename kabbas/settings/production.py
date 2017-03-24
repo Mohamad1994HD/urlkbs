@@ -18,6 +18,7 @@ ADMINS = (('Mohd','mohd1haddad@gmail.com'),)
 
 SERVER_EMAIL = 'logging@urlkbs.life'
 EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'logging'
 EMAIL_HOST_PAsSWORD = 'logging1994'
 
 ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
