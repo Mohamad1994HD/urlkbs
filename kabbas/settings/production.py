@@ -14,7 +14,7 @@ SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ADMINS = [('Mohd','mohd1haddad@gmail.com'),]
+ADMINS = (('Mohd','mohd1haddad@gmail.com'),)
 
 SERVER_EMAIL = 'logging@urlkbs.life'
 EMAIL_HOST = 'smtp.zoho.com'
