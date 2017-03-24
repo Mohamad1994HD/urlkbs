@@ -5,7 +5,8 @@ from .forms import SubmitURLForm
 # Create your views here.
 class ApiView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'shortener/api.html', {})
+        return HttpResponse("Api Documentation")
+        #return render(request, 'shortener/api.html', {})
 
 class HomeView(View):
     context = {}
