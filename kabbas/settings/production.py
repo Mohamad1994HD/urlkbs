@@ -18,7 +18,7 @@ ADMINS = [('Mohd','mohd1haddad@gmail.com'),]
 
 SERVER_EMAIL = 'logging@urlkbs.life'
 EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = 'logging'
+EMAIL_HOST_USER = '643912746'
 EMAIL_HOST_PASSWORD = 'logging1994'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
