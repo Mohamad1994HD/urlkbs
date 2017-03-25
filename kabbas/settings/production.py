@@ -14,6 +14,7 @@ SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# EMAIL
 ADMINS = [('Mohd','mohd1haddad@gmail.com'),]
 
 SERVER_EMAIL = 'logging@urlkbs.life'
@@ -22,6 +23,44 @@ EMAIL_HOST_USER = '643912746'
 EMAIL_HOST_PASSWORD = 'logging1994'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# LOGGING
+
+GGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'applogfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'APPNAME.log'),
+            'maxBytes': 1024*1024*15, # 15MB
+            'backupCount': 10,
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        ,
+        'APPNAME': {
+            'handlers': ['applogfile',],
+            'level': 'DEBUG',
+        },
+    }
+}
 
 ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
 
