@@ -14,14 +14,15 @@ SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ADMINS = (('Mohd','mohd1haddad@gmail.com'),)
+ADMINS = [('Mohd','mohd1haddad@gmail.com'),]
 
 SERVER_EMAIL = 'logging@urlkbs.life'
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'logging'
-EMAIL_HOST_PAsSWORD = 'logging1994'
-EMAIL_PORT = "465"
-EMAIL_USE_SSL = True
+EMAIL_HOST_PASSWORD = 'logging1994'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 ALLOWED_HOSTS = ["www.urlkbs.life", "urlkbs.life", "api.urlkbs.life", "kabbas.herokuapp.com"]
 
 
