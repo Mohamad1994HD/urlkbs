@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y7eesetu_%n+j$5zdz&991gcoucztk&$&koazbhjdl^4w0u2x&'
+SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -17,12 +17,12 @@ DEBUG = False
 # EMAIL
 ADMINS = [('Mohd','mohd1haddad@gmail.com'),]
 
-SERVER_EMAIL = 'logging@urlkbs.life'
-EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = '643912746'
-EMAIL_HOST_PASSWORD = 'logging1994'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+SERVER_EMAIL = os.environ.get('LOGGING_EMAIL')
+EMAIL_HOST = os.environ.get('EMAIL_HOST') 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = int(os.environ.get('EMAIL_SMTP_PORT'))
+EMAIL_USE_TLS = bool(int(os.environ.get('EMAIL_USE_TLS')))
 
 # LOGGING
 
