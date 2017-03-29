@@ -26,20 +26,20 @@ An Application Programming Interface (API) defines interfaces to a programming l
 <h3><strong>Endpoint "<i>api.urlkbs.life/</i>" for post request</strong></h3>
 
 <h4><strong>Usage (SIMPLE)</strong></h4>
-<p>post request to "api.kbs.com" with "url" as parameter
+<p>post request to "api.urlkbs.life" with "url" as parameter
 </p>
 
 <h4><strong>cURL</strong></h4>
 <pre>
     <code class='language-bash'>
-        curl --data "url=www.abc.com" http://api.kbs.com
+        curl --data "url=www.abc.com" http://api.urlkbs.life/
     </code>
 </pre>
 <br>
 <h4><strong>Python</strong></h4>
 <pre><code class='language-python'><div class='text-left'>
 import requests
-r = requests.post('http://api.kbs.com/', data={'url':'https://django-hosts.readthedocs.io/en/latest/'})
+r = requests.post('http://api.urlkbs.life/', data={'url':'https://django-hosts.readthedocs.io/en/latest/'})
 
 if r.json()['accepted']:
     print r.json()['data']['shortcode']
@@ -54,7 +54,7 @@ if r.json()['accepted']:
 {
   'accepted': 1,
   'data': {
-            'shortcode': 'http://www.kbs.com/xHTOog/',
+            'shortcode': 'http://www.urlkbs.life/xHTOog/',
             'url':  'https://django-hosts.readthedocs.io/en/latest/'
             }
 }
