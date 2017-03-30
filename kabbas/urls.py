@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url, include, handler500, handler404
 from django.contrib import admin
-from shortener.views import HomeView, RedirectURLView, ApiView
+from shortener.views import (
+                             HomeView, 
+                             RedirectURLView, 
+                             ApiView,
+                            )
+
+handler500 = 'shortener.views.err500'
+handler404 = 'shortener.views.err404'
 
 urlpatterns = [
    url(r'^$', HomeView.as_view(), name='home'),
@@ -23,3 +30,6 @@ urlpatterns = [
    url(r'^api/', ApiView.as_view(), name='api-doc'),
    url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
 ]        
+
+
+

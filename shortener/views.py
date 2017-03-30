@@ -44,4 +44,8 @@ class RedirectURLView(View):
 
 
 
+def err404(request):
+    return render(request, 'shortener/404.html', {})   
 
+def err500(request):
+    return render(request, 'shortener/500.html', {})
