@@ -171,7 +171,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Custom settings
 # Min/Max length of shortcode
-SHORTCODE_MAX = 16
+SHORTCODE_MAX = 15
 SHORTCODE_MIN = 6
 
 # API VERSION
