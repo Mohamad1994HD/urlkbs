@@ -176,3 +176,6 @@ SHORTCODE_MIN = 6
 
 # API VERSION
 API_VERSION = 1.0
+
+#SITE MAP
+SITEMAP_FILE_PATH = 'shortener/sitemap.xml'

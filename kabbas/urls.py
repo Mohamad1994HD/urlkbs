@@ -20,15 +20,18 @@ from shortener.views import (
                              RedirectURLView, 
                              ApiView,
                             )
+from django.views.generic import TemplateView
+from django.conf import settings
 
 handler500 = 'shortener.views.err500'
 handler404 = 'shortener.views.err404'
 
 urlpatterns = [
-   url(r'^$', HomeView.as_view(), name='home'),
-   url(r'^admin/', admin.site.urls),
-   url(r'^api/', ApiView.as_view(), name='api-doc'),
-   url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', ApiView.as_view(), name='api-doc'),
+    url(r'^sitemap.xml/$', TemplateView.as_view(template_name=settings.SITEMAP_FILE_PATH)),
+    url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
 ]        
 
 
