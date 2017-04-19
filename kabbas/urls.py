@@ -28,7 +28,7 @@ handler404 = 'shortener.views.err404'
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^admin/', admin.site.urls),
+  #  url(r'^admin/', admin.site.urls),
     url(r'^api/', ApiView.as_view(), name='api-doc'),
     url(r'^sitemap.xml/$', TemplateView.as_view(template_name=settings.SITEMAP_FILE_PATH)),
     url(r'^(?P<code>[\w-]+)/$', RedirectURLView.as_view(), name='short'),
