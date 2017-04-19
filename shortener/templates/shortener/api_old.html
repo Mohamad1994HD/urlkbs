@@ -1,0 +1,73 @@
+{% extends "shortener/base2.html" %}
+## {% load static %}  
+{% block title %}
+    api
+{% endblock title %}
+
+{% block stylesheets %}
+   <style> {% include "shortener/static_files/prism.css" %}</style>
+   <!-- <link href={% static "shortener/prism.css" %} rel="stylesheet" /> -->
+{% endblock stylesheets %}
+
+{% block scripts %}
+   <! -- <script src={% static "shortener/prism.js" %}></script> -->
+    <script> {% include "shortener/static_files/prism.js" %} </script>
+{% endblock scripts %}
+
+
+{% block content %}
+<div class='fluid-container text-left'>
+<br>
+<br>
+<br/>
+<p class='well'>
+An Application Programming Interface (API) defines interfaces to a programming library or framework for accessing functionality provided by the library or framework. The KBS REST API provides methods for accessing the shortening feature in our product. Your program talks to KBS using HTTP, the same protocols that your web browser uses to interact with web pages, and follows the principles of Representational State Transfer (REST). 
+</p>
+<h3><strong>Endpoint "<i>api.urlkbs.life/</i>" for post request</strong></h3>
+
+<h4><strong>Usage (SIMPLE)</strong></h4>
+<p>post request to "api.urlkbs.life" with "url" as parameter
+</p>
+
+<h4><strong>cURL</strong></h4>
+<pre>
+    <code class='language-bash'>
+        curl --data "url=www.abc.com" http://api.urlkbs.life/
+    </code>
+</pre>
+<br>
+<h4><strong>Python</strong></h4>
+<pre><code class='language-python'><div class='text-left'>
+import requests
+r = requests.post('http://api.urlkbs.life/', data={'url':'https://django-hosts.readthedocs.io/en/latest/'})
+
+if r.json()['accepted']:
+    print r.json()['data']['shortcode']
+</div>
+</code></pre>
+
+
+<h3><strong>Response</strong></h3>
+<p>SUCCESS</p> <p><strong>JSON</strong></p>
+<pre>
+    <code class='language-json'>
+{
+  'accepted': 1,
+  'data': {
+            'shortcode': 'http://www.urlkbs.life/xHTOog/',
+            'url':  'https://django-hosts.readthedocs.io/en/latest/'
+            }
+}
+    </code>
+</pre>
+
+<p>FAILURE</p> <p><strong>JSON</strong></p>
+<pre>
+    <code class='language-json'>
+    {'accepted': 0, 'msg': 'Invalid URL'}    
+    </code>
+</pre>
+</div>
+{% endblock content %}
+
+

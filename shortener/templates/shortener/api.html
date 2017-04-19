@@ -1,26 +1,212 @@
-{% extends "shortener/base2.html" %}
-## {% load static %}  
-{% block title %}
+<!DOCTYPE html>
+<!-- Προστέθηκε σήμανση μικροδεδομένων από το Βοηθητικό πρόγραμμα για τη σήμανση δομημένων δεδομένων Google. -->
+<html lang="en" class="fa-events-icons-ready"><head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="Web service to shorten URLs"/>
+    <meta name="author" content="Mohamad Alhd"/>
+<meta name="google-site-verification" content="4kS-bVuvOxxNY2uGGuirAJaUBGirmfSNo3k5xMfPBr8"/>
+    <title>KBS|
     api
-{% endblock title %}
+</title>
 
-{% block stylesheets %}
-   <style> {% include "shortener/static_files/prism.css" %}</style>
-   <!-- <link href={% static "shortener/prism.css" %} rel="stylesheet" /> -->
-{% endblock stylesheets %}
+    <!--  Bootstrap core CSS  -->
+    <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-{% block scripts %}
-   <! -- <script src={% static "shortener/prism.js" %}></script> -->
-    <script> {% include "shortener/static_files/prism.js" %} </script>
-{% endblock scripts %}
+    <!--  Custom styles for this template  -->
+    <link href="https://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet"/>
 
 
-{% block content %}
-<div class='fluid-container text-left'>
-<br>
-<br>
+ <style>
+    body{
+        background-color:#f5f5f5;
+        color:black;
+        font-family: "Times New Roman", Times, serif;
+    }
+    .starter-template{
+        background:#fff;
+        border:2px solid gray;
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow:0 0 10px gray; 
+    }
+ </style>  
+   
+   <style> /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+json+python */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+</style>
+   <!--  <link href=/static/shortener/prism.css rel="stylesheet" />  -->
+ 
+    <link href="https://use.fontawesome.com/8102b4fe5d.css" media="all" rel="stylesheet"/></head>
+
+  <body>
+
+    
+<span itemscope itemtype="http://schema.org/Article"><nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+<span itemprop="name"><i class="fa fa-compress" aria-hidden="true"></i> KBS</span></a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/api/">API</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+             
+<div class="fluid-container text-left">
 <br/>
-<p class='well'>
+<br/>
+<br/>
+<p itemprop="articleBody" class="well">
 An Application Programming Interface (API) defines interfaces to a programming library or framework for accessing functionality provided by the library or framework. The KBS REST API provides methods for accessing the shortening feature in our product. Your program talks to KBS using HTTP, the same protocols that your web browser uses to interact with web pages, and follows the principles of Representational State Transfer (REST). 
 </p>
 <h3><strong>Endpoint "<i>api.urlkbs.life/</i>" for post request</strong></h3>
@@ -30,44 +216,66 @@ An Application Programming Interface (API) defines interfaces to a programming l
 </p>
 
 <h4><strong>cURL</strong></h4>
-<pre>
-    <code class='language-bash'>
-        curl --data "url=www.abc.com" http://api.urlkbs.life/
+<pre class=" language-bash">    <code class=" language-bash">
+        curl --data <span class="token string">"url=www.abc.com"</span> 
+<span itemprop="url">http://api.urlkbs.life/</span>
     </code>
 </pre>
-<br>
+<br/>
 <h4><strong>Python</strong></h4>
-<pre><code class='language-python'><div class='text-left'>
-import requests
-r = requests.post('http://api.urlkbs.life/', data={'url':'https://django-hosts.readthedocs.io/en/latest/'})
+<pre class=" language-python"><code class=" language-python">
+<span class="token keyword">import</span> requests
+r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span><span class="token string">'http://api.urlkbs.life/'</span><span class="token punctuation">,</span> data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'url'</span><span class="token punctuation">:</span><span class="token string">'https://django-hosts.readthedocs.io/en/latest/'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-if r.json()['accepted']:
-    print r.json()['data']['shortcode']
-</div>
+<span class="token keyword">if</span> r<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'accepted'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> r<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'shortcode'</span><span class="token punctuation">]</span>
+
 </code></pre>
 
 
 <h3><strong>Response</strong></h3>
 <p>SUCCESS</p> <p><strong>JSON</strong></p>
-<pre>
-    <code class='language-json'>
-{
-  'accepted': 1,
-  'data': {
-            'shortcode': 'http://www.urlkbs.life/xHTOog/',
-            'url':  'https://django-hosts.readthedocs.io/en/latest/'
-            }
-}
+<pre class=" language-json">    <code class=" language-json">
+<span class="token punctuation">{</span>
+  'accepted'<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  'data'<span class="token operator">:</span> <span class="token punctuation">{</span>
+            'shortcode'<span class="token operator">:</span> 'http<span class="token operator">:</span>//www.urlkbs.life/xHTOog/'<span class="token punctuation">,</span>
+            'url'<span class="token operator">:</span>  'https<span class="token operator">:</span>//django-hosts.readthedocs.io/en/latest/'
+            <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
     </code>
 </pre>
 
 <p>FAILURE</p> <p><strong>JSON</strong></p>
-<pre>
-    <code class='language-json'>
-    {'accepted': 0, 'msg': 'Invalid URL'}    
+<pre class=" language-json">    <code class=" language-json">
+    <span class="token punctuation">{</span>'accepted'<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 'msg'<span class="token operator">:</span> 'Invalid URL'<span class="token punctuation">}</span>    
     </code>
 </pre>
 </div>
-{% endblock content %}
+ 
+      </div>
+
+    </div></span><!--  /.container  -->
 
 
+    <!--  Bootstrap core JavaScript
+    ==================================================  -->
+    <!--  Placed at the end of the document so the pages load faster  -->
+
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    
+<script></script>
+
+<script src="https://use.fontawesome.com/8102b4fe5d.js"></script>
+
+    
+   <!--  -- <script src=/static/shortener/prism.js --> -->
+    <script></script>
+
+  
+
+
+</body></html>
