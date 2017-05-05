@@ -14,15 +14,16 @@ class KBSUrlView(APIView):
     
     def post(self, request):
         serializer = UrlSerializer(data=request.POST)
-        context = {"accepted" : 1}
         print (request.POST)
 
         if serializer.is_valid():
-            new_url = serializer.validated_data['url']
-            obj, created = KbsURL.objects.get_or_create(url=new_url)
-            response_serializer = UrlSerializer(obj)
-            context['data'] = response_serializer.data
+            serializer.save()
+            context = {
+                'accepted':1,
+                'data': serializer.data,
+            }    
             return Response(context)
+        
         context = {
                     'accepted': 0,
                     'msg': 'Invalid URL'

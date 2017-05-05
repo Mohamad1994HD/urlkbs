@@ -26,7 +26,7 @@ EMAIL_USE_TLS = bool(int(os.environ.get('EMAIL_USE_TLS')))
 
 # LOGGING
 
-GGING = {
+LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
